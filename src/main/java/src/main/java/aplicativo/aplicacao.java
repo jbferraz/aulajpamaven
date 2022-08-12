@@ -8,6 +8,8 @@ package src.main.java.aplicativo;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import src.main.java.dao.PessoaDao;
+import src.main.java.dominio.Carro;
 import src.main.java.dominio.Pessoa;
 
 /**
@@ -24,6 +26,8 @@ public class aplicacao {
 //        Pessoa p1 = new Pessoa(null, "Carlos da Silva", "carlos@gmail.com");
 //        Pessoa p2 = new Pessoa(null, "Joaquim Torres", "joaquim@gmail.com");
 //        Pessoa p3 = new Pessoa(null, "Ana Maria", "ana@gmail.com");
+//        Pessoa p4 = new Pessoa(null, "Ana Jaqueline", "jaque@gmail.com", "123456");
+        
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
         EntityManager em = emf.createEntityManager();
@@ -35,11 +39,12 @@ public class aplicacao {
 //        em.getTransaction().commit();
 
 //        Recupera
-        Pessoa p = em.find(Pessoa.class, 5);
-        p.setEmail("joca@gmail.com");
-        em.getTransaction().begin();
-        em.persist(p);
-        em.getTransaction().commit();
+        Pessoa p = em.find(Pessoa.class, 2);
+//        p.setEmail("joca@gmail.com");
+//        em.getTransaction().begin();
+//        em.persist(p);
+//        em.getTransaction().commit();
+        
 //        Deletar
 //        Pessoa p = em.find(Pessoa.class, 5);
 //        em.getTransaction().begin();

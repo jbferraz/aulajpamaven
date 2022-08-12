@@ -6,6 +6,7 @@
 package src.main.java.dominio;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,14 +24,17 @@ public class Pessoa implements Serializable{
     private Integer id;
     private String nome;
     private String email;
-
+    @Column(length = 30, unique = true)
+    private String cpf;
+    
     public Pessoa() {
     }
 
-    public Pessoa(Integer id, String nome, String email) {
+    public Pessoa(Integer id, String nome, String email, String cpf) {
         this.id = id;
         this.nome = nome;
         this.email = email;
+        this.cpf = cpf;
     }
 
     public Integer getId() {
@@ -56,10 +60,18 @@ public class Pessoa implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
     @Override
     public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + '}';
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf + '}';
     }
     
     
